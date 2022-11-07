@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = '374b042381a0a4bc9d7f6f64eab0b0d723d57a12145663f6cbe9
 # Sessions
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
-Session(app)
+Session(app)  
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
