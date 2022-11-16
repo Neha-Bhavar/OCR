@@ -11,6 +11,11 @@ import pytesseract
 import numpy as np
 from gtts import gTTS
 
+# listen
+import speech_recognition as sr
+from googletrans import Translator
+
+
 
 @app.route("/")
 def index():
@@ -122,3 +127,61 @@ def decoded():
                 form = form,lang=utils.languages.get(lang), 
                 audio = False
             )   
+
+
+# @app.route("/speech", methods=["POST", "GET"])
+# def speech():
+#     return "Hello World"
+
+
+
+
+
+# # for index J name in enumerate(sr.Kicrophone. list_nicrophone_names()):
+# #print(f"name {name} at index {index}")
+#     r=sr. Recognizer()
+#     with sr.Microphone() as source:
+#         print("say something")
+#         audio=r. listen(source)
+#         query=r.recognize_google(audio)
+#         print(query)
+
+
+
+
+
+# #1 Listen : Hindi or English
+# def Listen():
+#     r= sr.Recognizer()
+
+#     with sr.Microphone() as source:
+#         print("Listening...")
+#         r.pause_threshold = 1
+#         audio = r.listen(source,0,8)
+
+#     try:
+#         print("Recognizing...")
+#         query = r.recognize_google(audio,language="hi")
+
+#     except:
+#         return ""
+
+#     query = str(query).lower()
+#     return query
+
+# #2 Translation
+# def TranslationHinToEng(Text):
+#     line = str(Text)
+#     translate = Translator()
+#     result = translate.translate(line)
+#     data = result.text
+#     print(f"You : {data}.")
+#     return data
+
+# #3 Connect
+# def MicExecution():
+#     query = Listen()
+#     data = TranslationHinToEng(query)
+#     return data
+# MicExecution()
+
